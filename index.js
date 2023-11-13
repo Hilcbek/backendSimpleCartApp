@@ -15,7 +15,7 @@ app.use(
 );
 app.use(express.json())
 app.use(morgan('common'))
-let PORT = process.env.PORT || 5000
+let PORT = process.env.PORT
 let MONGODB = process.env.MONGODB;
 mongoose.connect(MONGODB).then(() => {
     app.listen(PORT,() => console.log(`Server is running on port ${PORT}`))
