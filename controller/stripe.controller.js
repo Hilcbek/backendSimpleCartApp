@@ -11,9 +11,9 @@ export let Payment = expressAsync(async (req, res, next) => {
         currency: "usd",
         product_data: {
           name: product.title,
-          description: product?.desc,
+          description: product.desc,
         },
-        unit_amount: product?.price * 100,
+        unit_amount: product.price * 100,
       },
       quantity: product.quantity,
     };
