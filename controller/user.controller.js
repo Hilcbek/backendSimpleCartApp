@@ -36,3 +36,11 @@ export let Login = asyncHandler(async (req, res, next) => {
     next(error);
   }
 });
+export let GetUser = asyncHandler(async(req,res,next) => {
+  try {
+    let Users = await User.find({});
+    res.status(200).json(Users)
+  } catch (error) {
+    next(error)
+  }
+})
