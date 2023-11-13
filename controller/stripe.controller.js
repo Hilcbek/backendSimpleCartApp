@@ -20,7 +20,7 @@ export let Payment = expressAsync(async (req, res, next) => {
   })
   try {
     let session = await stripe.checkout.sessions.create({
-      line_items: line_items || [],
+      line_items: line_items,
       mode: "payment",
       success_url: "http://localhost:5173/success",
       cancel_url: "http://localhost:5173",
