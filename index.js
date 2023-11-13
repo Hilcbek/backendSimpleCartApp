@@ -25,7 +25,7 @@ mongoose.connection.on('disconnected',() => console.log('mongodb stopped listeni
 app.use('/api/auth',routerUser)
 app.use("/api/stripe", routerStripe);
 app.use((err,req,res,next) => {
-    let errorMessage = err.message || 'Something went wrong'
-    let errorStatus = err.status || 500
+    let errorMessage = err.message
+    let errorStatus = err.status
     res.status(errorStatus).json(errorMessage)
 })
